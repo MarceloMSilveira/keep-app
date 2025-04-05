@@ -3,7 +3,7 @@ function Note () {
   const content = "Content of Note"
   
   return (
-    <div>
+    <div className="note">
       <h1>{title}</h1>
       <p>{content}</p>
     </div>

@@ -1,6 +1,9 @@
 function Footer() {
   return(
-    <p> A MS1 Copyright © Proj {new Date().getFullYear()}</p>
+    <div className="footer">
+      <p> A MS1 Copyright © Proj {new Date().getFullYear()}</p>
+    </div>
+    
   )
 }
 
