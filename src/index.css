@@ -38,7 +38,7 @@ footer p {
   color: #ccc;
 }
 
-note {
+.note {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
@@ -48,12 +48,12 @@ note {
   float: left;
 }
 
-note h1 {
+.note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
 
-note p {
+.note p {
   font-size: 1.1em;
   margin-bottom: 10px;
   white-space: pre-wrap;

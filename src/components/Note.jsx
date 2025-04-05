@@ -3,10 +3,10 @@ function Note () {
   const content = "Content of Note"
   
   return (
-    <note>
+    <div className="note">
       <h1>{title}</h1>
       <p>{content}</p>
-    </note>
+    </div>
   )
 }
 
