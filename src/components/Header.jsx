@@ -1,9 +1,9 @@
 function Header() {
-  const appName = "MS1 KEEPER APP"
+  const appName = "MS1 Keeper APP"
   return (
-    <div className='header'>
+    <header>
       <h1>{appName}</h1>
-    </div>
+    </header>
   )
 }
 

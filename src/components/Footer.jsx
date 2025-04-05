@@ -1,8 +1,8 @@
 function Footer() {
   return(
-    <div className="footer">
+    <footer>
       <p> A MS1 Copyright © Proj {new Date().getFullYear()}</p>
-    </div>
+    </footer>
     
   )
 }
