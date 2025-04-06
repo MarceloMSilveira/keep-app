@@ -1,7 +1,4 @@
-function Note () {
-  const title = "Title of Note";
-  const content = "Content of Note"
-  
+function Note ({title,content}) {
   return (
     <div className="note">
       <h1>{title}</h1>
