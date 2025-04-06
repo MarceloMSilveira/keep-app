@@ -5,7 +5,7 @@ import notes from "./notes";
 
 function renderNote(note) {
   return(
-    <Note title={note.title} content={note.content}/>
+    <Note key={note.key} title={note.title} content={note.content}/>
   )
 }
 
