@@ -4,25 +4,13 @@ import Note from "./components/Note";
 import CreateArea from "./components/CreateArea";
 import { useState } from "react";
 
-// const note1 = {title:"note1 title",content:"note1 content"}
-// const note2 = {title:"note2 title",content:"note2 content"}
-// const note3 = {title:"note3 title",content:"note3 content"}
-//let noteList = [note1,note2,note3]
-
 function App() {
-  const [noteList,setNoteList] = useState([{
-    title:"note1 title",
-    content:"note1 content"
-  }])
+  const [noteList,setNoteList] = useState([])
 
-  function addToList(newNote) {
-    setNoteList([...noteList,newNote])
-  }
-  
   return(
     <>
       <Header />
-      <CreateArea onAddNote={addToList}/>
+      <CreateArea onAddNote={(newNote)=>setNoteList([...noteList,newNote])}/>
       {noteList.map((note,index)=><Note key={index} title={note.title} content={note.content} />)}
       <Footer />
     </>

@@ -1,14 +1,22 @@
 import { useState } from "react";
 
-export default function CreateArea() {
+export default function CreateArea({onAddNote}) {
   const [note,setNote] = useState({
     title:"",
     content:""
   })
 
+  function handleAddNote() {
+    onAddNote(note);
+    setNote({
+      title:"",
+      content:""
+    });
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={evt=>evt.preventDefault()}>
         <input 
           onChange={evt=>setNote({...note,title:evt.target.value})} 
           name="title" 
@@ -22,7 +30,7 @@ export default function CreateArea() {
           rows="3" 
           value={note.content}
         />
-        <button>Add</button>
+        <button type="submit" onClick={handleAddNote}>Add</button>
       </form>
     </div>
   );
