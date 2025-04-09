@@ -3,12 +3,17 @@ import Header from "./components/Header";
 import Note from "./components/Note";
 import CreateArea from "./components/CreateArea";
 
+const note1 = {title:"note1 title",content:"note1 content"}
+const note2 = {title:"note2 title",content:"note2 content"}
+const note3 = {title:"note3 title",content:"note3 content"}
+let noteList = [note1,note2,note3]
+
 function App() {
   return(
     <>
       <Header />
       <CreateArea />
-      <Note key={1} title="Note title" content="Note content" />
+      {noteList.map((note,index)=><Note key={index} title={note.title} content={note.content} />)}
       <Footer />
     </>
   )
