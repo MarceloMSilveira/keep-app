@@ -21,7 +21,7 @@ export default function CreateArea({onAddNote}) {
 
   return (
     <div>
-      <form >
+      <form className="create-note">
         <input 
           onChange={evt=>setNote({...note,title:evt.target.value})} 
           name="title" 
