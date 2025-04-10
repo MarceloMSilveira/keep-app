@@ -5,13 +5,26 @@ import CreateArea from "./components/CreateArea";
 import { useState } from "react";
 
 function App() {
+
   const [noteList,setNoteList] = useState([])
+  
+  function handleMap(note,index) {
+    return (
+      <Note 
+        key={index} 
+        id={note.id} 
+        title={note.title} 
+        content={note.content} 
+        deleteItem={(id)=>setNoteList(noteList.filter(note=>note.id!==id))}
+      />
+    )
+  }
 
   return(
     <>
       <Header />
       <CreateArea onAddNote={(newNote)=>setNoteList([...noteList,newNote])}/>
-      {noteList.map((note,index)=><Note key={index} title={note.title} content={note.content} />)}
+      {noteList.map(handleMap)}
       <Footer />
     </>
   )

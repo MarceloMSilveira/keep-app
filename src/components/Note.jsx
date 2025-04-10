@@ -1,9 +1,9 @@
-function Note ({title,content}) {
+function Note ({id,title,content,deleteItem}) {
   return (
     <div className="note">
       <h1>{title}</h1>
       <p>{content}</p>
-      <button>DELETE</button>
+      <button onClick={()=>deleteItem(id)}>DELETE</button>
     </div>
   )
 }
