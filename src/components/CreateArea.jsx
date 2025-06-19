@@ -1,4 +1,6 @@
 import { useState } from "react";
+import AddIcon from '@mui/icons-material/Add';
+import Fab from '@mui/material/Fab';
 let idCounter = 0;
 
 export default function CreateArea({onAddNote}) {
@@ -35,7 +37,7 @@ export default function CreateArea({onAddNote}) {
           rows="3" 
           value={note.content}
         />
-        <button type="submit" onClick={handleAddNote}>Add</button>
+        <Fab type="submit" onClick={handleAddNote}><AddIcon /></Fab>
       </form>
     </div>
   );
