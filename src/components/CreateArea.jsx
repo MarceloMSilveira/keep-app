@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
+import Zoom from '@mui/material/Zoom';
 let idCounter = 0;
 
 export default function CreateArea({onAddNote}) {
@@ -37,7 +38,12 @@ export default function CreateArea({onAddNote}) {
           rows="3" 
           value={note.content}
         />
-        <Fab type="submit" onClick={handleAddNote}><AddIcon /></Fab>
+        <Zoom in={true}>
+          <Fab onClick={handleAddNote}>
+            <AddIcon />
+          </Fab>
+        </Zoom>
+        
       </form>
     </div>
   );
