@@ -1,8 +1,9 @@
+import HighlightIcon from '@mui/icons-material/Highlight';
 function Header() {
-  const appName = "MS1 Keeper APP"
+  const appName = " MS1 Keeper APP"
   return (
     <header>
-      <h1>{appName}</h1>
+      <h1><HighlightIcon />{appName}</h1>
     </header>
   )
 }
