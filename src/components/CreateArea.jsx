@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
@@ -11,6 +11,8 @@ export default function CreateArea({onAddNote}) {
     content:""
   })
 
+  const [isSmall, setIsSmall] = useState(true);
+
   function handleAddNote(evt) {
     note.id = idCounter;
     onAddNote(note);
@@ -22,23 +24,30 @@ export default function CreateArea({onAddNote}) {
     evt.preventDefault()
   }
 
+  function handleFirstClick() {
+    if (isSmall) {
+      setIsSmall(false)
+    }
+  }
+
   return (
     <div>
       <form className="create-note">
-        <input 
+        {!isSmall&&<input 
           onChange={evt=>setNote({...note,title:evt.target.value})} 
           name="title" 
           placeholder="Title" 
           value={note.title}
-        />
+        />}
         <textarea 
           onChange={evt=>setNote({...note,content:evt.target.value})} 
           name="content" 
           placeholder="Take a note..." 
-          rows="3" 
+          rows= {isSmall ? "1" : "3"} 
           value={note.content}
+          onClick = {handleFirstClick}
         />
-        <Zoom in={true}>
+        <Zoom in={!isSmall}>
           <Fab onClick={handleAddNote}>
             <AddIcon />
           </Fab>
